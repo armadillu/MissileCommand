@@ -11,9 +11,9 @@
 		1d5f3298c2fa073628012944b1efde88 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */; };
 		250a95ba26587be85db0a353e6e1dea2 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ce9c7160245b19131dae61282ee6cb53 /* ofxCvColorImage.cpp */; };
 		63020f16c7e8ded9801112417e67ad38 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c6151136d101f857dae12722e3c42f4a /* ofxCvImage.cpp */; };
-		BB13BAD51727FB46007078CD /* Missile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BAD41727FB46007078CD /* Missile.cpp */; };
-		BB13BAF8172802BF007078CD /* ofxMediaDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */; };
-		BB13BB0617280371007078CD /* ofxColorGradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BB0217280371007078CD /* ofxColorGradient.cpp */; };
+		BB26D3E0172832B700EF5EFD /* ofxColorGradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3DC172832B700EF5EFD /* ofxColorGradient.cpp */; };
+		BB26D3F1172832D300EF5EFD /* ofxMediaDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3ED172832D300EF5EFD /* ofxMediaDB.cpp */; };
+		BB26D3F3172832F100EF5EFD /* Missile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3F2172832F100EF5EFD /* Missile.cpp */; };
 		BB80BD471726748500181178 /* LaserPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB80BD451726748500181178 /* LaserPointer.cpp */; };
 		BB9715C91725C6B4009D5CE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C41725C6B4009D5CE7 /* main.cpp */; };
 		BB9715CA1725C6B4009D5CE7 /* Obj2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C51725C6B4009D5CE7 /* Obj2D.cpp */; };
@@ -161,19 +161,14 @@
 		9b90b3ee60497170aa00bfe88ce34fd0 /* types_c.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = types_c.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc/types_c.h; sourceTree = SOURCE_ROOT; };
 		9da0cbd43da38386eb04c9ae7ce0666e /* miniflann.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = miniflann.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/miniflann.hpp; sourceTree = SOURCE_ROOT; };
 		9ff9126184dfbde8a912373ebe9d2f9d /* highgui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = highgui.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/highgui.h; sourceTree = SOURCE_ROOT; };
-		BB13BAD21727D5A4007078CD /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		BB13BAD31727DE7D007078CD /* Silo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Silo.h; sourceTree = "<group>"; };
-		BB13BAD41727FB46007078CD /* Missile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Missile.cpp; sourceTree = "<group>"; };
-		BB13BAE117280273007078CD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
-		BB13BAE317280273007078CD /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
-		BB13BAE417280273007078CD /* ExplosionParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionParticles.h; sourceTree = "<group>"; };
-		BB13BAE517280273007078CD /* ExplosionSmoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionSmoke.h; sourceTree = "<group>"; };
-		BB13BAF2172802BF007078CD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
-		BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMediaDB.cpp; sourceTree = "<group>"; };
-		BB13BAF5172802BF007078CD /* ofxMediaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMediaDB.h; sourceTree = "<group>"; };
-		BB13BB0017280371007078CD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
-		BB13BB0217280371007078CD /* ofxColorGradient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxColorGradient.cpp; sourceTree = "<group>"; };
-		BB13BB0317280371007078CD /* ofxColorGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorGradient.h; sourceTree = "<group>"; };
+		BB26D3DA172832B700EF5EFD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
+		BB26D3DC172832B700EF5EFD /* ofxColorGradient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxColorGradient.cpp; sourceTree = "<group>"; };
+		BB26D3DD172832B700EF5EFD /* ofxColorGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorGradient.h; sourceTree = "<group>"; };
+		BB26D3EB172832D300EF5EFD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
+		BB26D3ED172832D300EF5EFD /* ofxMediaDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMediaDB.cpp; sourceTree = "<group>"; };
+		BB26D3EE172832D300EF5EFD /* ofxMediaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMediaDB.h; sourceTree = "<group>"; };
+		BB26D3F2172832F100EF5EFD /* Missile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Missile.cpp; sourceTree = "<group>"; };
+		BB26D3F4172832F600EF5EFD /* Silo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silo.h; sourceTree = "<group>"; };
 		BB80BD451726748500181178 /* LaserPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LaserPointer.cpp; sourceTree = "<group>"; };
 		BB80BD461726748500181178 /* LaserPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserPointer.h; sourceTree = "<group>"; };
 		BB9715C41725C6B4009D5CE7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -534,60 +529,40 @@
 			name = highgui;
 			sourceTree = "<group>";
 		};
-		BB13BAD617280272007078CD /* ofxExplosion */ = {
+		BB26D3D3172832B700EF5EFD /* ofxColorGradient */ = {
 			isa = PBXGroup;
 			children = (
-				BB13BAE117280273007078CD /* readme.md */,
-				BB13BAE217280273007078CD /* src */,
-			);
-			name = ofxExplosion;
-			path = ../../../../_Addons/ofxExplosion;
-			sourceTree = "<group>";
-		};
-		BB13BAE217280273007078CD /* src */ = {
-			isa = PBXGroup;
-			children = (
-				BB13BAE317280273007078CD /* Explosion.h */,
-				BB13BAE417280273007078CD /* ExplosionParticles.h */,
-				BB13BAE517280273007078CD /* ExplosionSmoke.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		BB13BAE8172802BF007078CD /* ofxMediaDB */ = {
-			isa = PBXGroup;
-			children = (
-				BB13BAF2172802BF007078CD /* ReadMe.md */,
-				BB13BAF3172802BF007078CD /* src */,
-			);
-			name = ofxMediaDB;
-			path = ../../../../_Addons/ofxMediaDB;
-			sourceTree = "<group>";
-		};
-		BB13BAF3172802BF007078CD /* src */ = {
-			isa = PBXGroup;
-			children = (
-				BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */,
-				BB13BAF5172802BF007078CD /* ofxMediaDB.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		BB13BAF917280371007078CD /* ofxColorGradient */ = {
-			isa = PBXGroup;
-			children = (
-				BB13BB0017280371007078CD /* ReadMe.md */,
-				BB13BB0117280371007078CD /* src */,
+				BB26D3DA172832B700EF5EFD /* ReadMe.md */,
+				BB26D3DB172832B700EF5EFD /* src */,
 			);
 			name = ofxColorGradient;
 			path = ../../../../_Addons/ofxColorGradient;
 			sourceTree = "<group>";
 		};
-		BB13BB0117280371007078CD /* src */ = {
+		BB26D3DB172832B700EF5EFD /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BB13BB0217280371007078CD /* ofxColorGradient.cpp */,
-				BB13BB0317280371007078CD /* ofxColorGradient.h */,
+				BB26D3DC172832B700EF5EFD /* ofxColorGradient.cpp */,
+				BB26D3DD172832B700EF5EFD /* ofxColorGradient.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		BB26D3E1172832D300EF5EFD /* ofxMediaDB */ = {
+			isa = PBXGroup;
+			children = (
+				BB26D3EB172832D300EF5EFD /* ReadMe.md */,
+				BB26D3EC172832D300EF5EFD /* src */,
+			);
+			name = ofxMediaDB;
+			path = ../../../../_Addons/ofxMediaDB;
+			sourceTree = "<group>";
+		};
+		BB26D3EC172832D300EF5EFD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB26D3ED172832D300EF5EFD /* ofxMediaDB.cpp */,
+				BB26D3EE172832D300EF5EFD /* ofxMediaDB.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -595,9 +570,8 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				BB13BAF917280371007078CD /* ofxColorGradient */,
-				BB13BAE8172802BF007078CD /* ofxMediaDB */,
-				BB13BAD617280272007078CD /* ofxExplosion */,
+				BB26D3E1172832D300EF5EFD /* ofxMediaDB */,
+				BB26D3D3172832B700EF5EFD /* ofxColorGradient */,
 				BB80BD431726748500181178 /* ofxLaserPointer */,
 				BB97172A172601A4009D5CE7 /* ofxRemoteCamera */,
 				BB9716E71726012F009D5CE7 /* ofxSimpleGuiTooBeta */,
@@ -966,10 +940,9 @@
 				BB9715C71725C6B4009D5CE7 /* testApp.cpp */,
 				BB9715C81725C6B4009D5CE7 /* testApp.h */,
 				BB9715DC1725DB81009D5CE7 /* Missile.h */,
-				BB13BAD41727FB46007078CD /* Missile.cpp */,
+				BB26D3F4172832F600EF5EFD /* Silo.h */,
+				BB26D3F2172832F100EF5EFD /* Missile.cpp */,
 				BB9715DD1725DBC3009D5CE7 /* Constants.h */,
-				BB13BAD21727D5A4007078CD /* City.h */,
-				BB13BAD31727DE7D007078CD /* Silo.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1200,9 +1173,9 @@
 				BB971754172601A4009D5CE7 /* ofxRemoteCameraClient.cpp in Sources */,
 				BB971755172601A4009D5CE7 /* ofxRemoteCameraServer.cpp in Sources */,
 				BB80BD471726748500181178 /* LaserPointer.cpp in Sources */,
-				BB13BAD51727FB46007078CD /* Missile.cpp in Sources */,
-				BB13BAF8172802BF007078CD /* ofxMediaDB.cpp in Sources */,
-				BB13BB0617280371007078CD /* ofxColorGradient.cpp in Sources */,
+				BB26D3E0172832B700EF5EFD /* ofxColorGradient.cpp in Sources */,
+				BB26D3F1172832D300EF5EFD /* ofxMediaDB.cpp in Sources */,
+				BB26D3F3172832F100EF5EFD /* Missile.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
