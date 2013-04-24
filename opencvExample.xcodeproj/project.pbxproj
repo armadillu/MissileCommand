@@ -11,6 +11,10 @@
 		1d5f3298c2fa073628012944b1efde88 /* ofxCvContourFinder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c76de5c29bdbd2caa1dd0021a7376220 /* ofxCvContourFinder.cpp */; };
 		250a95ba26587be85db0a353e6e1dea2 /* ofxCvColorImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ce9c7160245b19131dae61282ee6cb53 /* ofxCvColorImage.cpp */; };
 		63020f16c7e8ded9801112417e67ad38 /* ofxCvImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = c6151136d101f857dae12722e3c42f4a /* ofxCvImage.cpp */; };
+		BB13BAD51727FB46007078CD /* Missile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BAD41727FB46007078CD /* Missile.cpp */; };
+		BB13BAF8172802BF007078CD /* ofxMediaDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */; };
+		BB13BB0617280371007078CD /* ofxColorGradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB13BB0217280371007078CD /* ofxColorGradient.cpp */; };
+		BB80BD471726748500181178 /* LaserPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB80BD451726748500181178 /* LaserPointer.cpp */; };
 		BB9715C91725C6B4009D5CE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C41725C6B4009D5CE7 /* main.cpp */; };
 		BB9715CA1725C6B4009D5CE7 /* Obj2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C51725C6B4009D5CE7 /* Obj2D.cpp */; };
 		BB9715CB1725C6B4009D5CE7 /* testApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C71725C6B4009D5CE7 /* testApp.cpp */; };
@@ -36,7 +40,6 @@
 		BB9717241726012F009D5CE7 /* ofxSimpleGuiPage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9717101726012F009D5CE7 /* ofxSimpleGuiPage.cpp */; };
 		BB9717251726012F009D5CE7 /* ofxSimpleGuiToo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9717121726012F009D5CE7 /* ofxSimpleGuiToo.cpp */; };
 		BB9717261726012F009D5CE7 /* ofxSimpleGuiValueControl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9717141726012F009D5CE7 /* ofxSimpleGuiValueControl.cpp */; };
-		BB97172917260148009D5CE7 /* LaserPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB97172717260148009D5CE7 /* LaserPointer.cpp */; };
 		BB97174F172601A4009D5CE7 /* libjpeg.62.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BB97173D172601A4009D5CE7 /* libjpeg.62.dylib */; };
 		BB971750172601A4009D5CE7 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB97173E172601A4009D5CE7 /* libjpeg.a */; };
 		BB971751172601A4009D5CE7 /* libturbojpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB97173F172601A4009D5CE7 /* libturbojpeg.a */; };
@@ -158,6 +161,21 @@
 		9b90b3ee60497170aa00bfe88ce34fd0 /* types_c.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = types_c.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/imgproc/types_c.h; sourceTree = SOURCE_ROOT; };
 		9da0cbd43da38386eb04c9ae7ce0666e /* miniflann.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = miniflann.hpp; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv2/flann/miniflann.hpp; sourceTree = SOURCE_ROOT; };
 		9ff9126184dfbde8a912373ebe9d2f9d /* highgui.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = highgui.h; path = ../../../addons/ofxOpenCv/libs/opencv/include/opencv/highgui.h; sourceTree = SOURCE_ROOT; };
+		BB13BAD21727D5A4007078CD /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		BB13BAD31727DE7D007078CD /* Silo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Silo.h; sourceTree = "<group>"; };
+		BB13BAD41727FB46007078CD /* Missile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Missile.cpp; sourceTree = "<group>"; };
+		BB13BAE117280273007078CD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		BB13BAE317280273007078CD /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
+		BB13BAE417280273007078CD /* ExplosionParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionParticles.h; sourceTree = "<group>"; };
+		BB13BAE517280273007078CD /* ExplosionSmoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionSmoke.h; sourceTree = "<group>"; };
+		BB13BAF2172802BF007078CD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
+		BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMediaDB.cpp; sourceTree = "<group>"; };
+		BB13BAF5172802BF007078CD /* ofxMediaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMediaDB.h; sourceTree = "<group>"; };
+		BB13BB0017280371007078CD /* ReadMe.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.md; sourceTree = "<group>"; };
+		BB13BB0217280371007078CD /* ofxColorGradient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxColorGradient.cpp; sourceTree = "<group>"; };
+		BB13BB0317280371007078CD /* ofxColorGradient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxColorGradient.h; sourceTree = "<group>"; };
+		BB80BD451726748500181178 /* LaserPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LaserPointer.cpp; sourceTree = "<group>"; };
+		BB80BD461726748500181178 /* LaserPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserPointer.h; sourceTree = "<group>"; };
 		BB9715C41725C6B4009D5CE7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		BB9715C51725C6B4009D5CE7 /* Obj2D.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Obj2D.cpp; sourceTree = "<group>"; };
 		BB9715C61725C6B4009D5CE7 /* Obj2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Obj2D.h; sourceTree = "<group>"; };
@@ -225,8 +243,6 @@
 		BB9717131726012F009D5CE7 /* ofxSimpleGuiToo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiToo.h; sourceTree = "<group>"; };
 		BB9717141726012F009D5CE7 /* ofxSimpleGuiValueControl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSimpleGuiValueControl.cpp; sourceTree = "<group>"; };
 		BB9717151726012F009D5CE7 /* ofxSimpleGuiValueControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxSimpleGuiValueControl.h; sourceTree = "<group>"; };
-		BB97172717260148009D5CE7 /* LaserPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LaserPointer.cpp; path = ../../laserPointer/src/LaserPointer.cpp; sourceTree = "<group>"; };
-		BB97172817260148009D5CE7 /* LaserPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LaserPointer.h; path = ../../laserPointer/src/LaserPointer.h; sourceTree = "<group>"; };
 		BB971736172601A4009D5CE7 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		BB97173A172601A4009D5CE7 /* turbojpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = turbojpeg.h; sourceTree = "<group>"; };
 		BB97173D172601A4009D5CE7 /* libjpeg.62.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libjpeg.62.dylib; sourceTree = "<group>"; };
@@ -518,9 +534,71 @@
 			name = highgui;
 			sourceTree = "<group>";
 		};
+		BB13BAD617280272007078CD /* ofxExplosion */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BAE117280273007078CD /* readme.md */,
+				BB13BAE217280273007078CD /* src */,
+			);
+			name = ofxExplosion;
+			path = ../../../../_Addons/ofxExplosion;
+			sourceTree = "<group>";
+		};
+		BB13BAE217280273007078CD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BAE317280273007078CD /* Explosion.h */,
+				BB13BAE417280273007078CD /* ExplosionParticles.h */,
+				BB13BAE517280273007078CD /* ExplosionSmoke.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		BB13BAE8172802BF007078CD /* ofxMediaDB */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BAF2172802BF007078CD /* ReadMe.md */,
+				BB13BAF3172802BF007078CD /* src */,
+			);
+			name = ofxMediaDB;
+			path = ../../../../_Addons/ofxMediaDB;
+			sourceTree = "<group>";
+		};
+		BB13BAF3172802BF007078CD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BAF4172802BF007078CD /* ofxMediaDB.cpp */,
+				BB13BAF5172802BF007078CD /* ofxMediaDB.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		BB13BAF917280371007078CD /* ofxColorGradient */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BB0017280371007078CD /* ReadMe.md */,
+				BB13BB0117280371007078CD /* src */,
+			);
+			name = ofxColorGradient;
+			path = ../../../../_Addons/ofxColorGradient;
+			sourceTree = "<group>";
+		};
+		BB13BB0117280371007078CD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB13BB0217280371007078CD /* ofxColorGradient.cpp */,
+				BB13BB0317280371007078CD /* ofxColorGradient.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				BB13BAF917280371007078CD /* ofxColorGradient */,
+				BB13BAE8172802BF007078CD /* ofxMediaDB */,
+				BB13BAD617280272007078CD /* ofxExplosion */,
+				BB80BD431726748500181178 /* ofxLaserPointer */,
 				BB97172A172601A4009D5CE7 /* ofxRemoteCamera */,
 				BB9716E71726012F009D5CE7 /* ofxSimpleGuiTooBeta */,
 				BB9716D517260128009D5CE7 /* ofxMSAInteractiveObject */,
@@ -531,6 +609,24 @@
 				a0b90d3b0adb9c1716816714bf7f212b /* ofxOpenCv */,
 			);
 			name = addons;
+			sourceTree = "<group>";
+		};
+		BB80BD431726748500181178 /* ofxLaserPointer */ = {
+			isa = PBXGroup;
+			children = (
+				BB80BD441726748500181178 /* src */,
+			);
+			name = ofxLaserPointer;
+			path = ../../../../_Addons/ofxLaserPointer;
+			sourceTree = "<group>";
+		};
+		BB80BD441726748500181178 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB80BD451726748500181178 /* LaserPointer.cpp */,
+				BB80BD461726748500181178 /* LaserPointer.h */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		BB9716AC172600FC009D5CE7 /* ofxBlobTracker */ = {
@@ -864,15 +960,16 @@
 		E4B69E1C0A3A1BDC003C02F2 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				BB97172717260148009D5CE7 /* LaserPointer.cpp */,
-				BB97172817260148009D5CE7 /* LaserPointer.h */,
 				BB9715C41725C6B4009D5CE7 /* main.cpp */,
 				BB9715C51725C6B4009D5CE7 /* Obj2D.cpp */,
 				BB9715C61725C6B4009D5CE7 /* Obj2D.h */,
 				BB9715C71725C6B4009D5CE7 /* testApp.cpp */,
 				BB9715C81725C6B4009D5CE7 /* testApp.h */,
 				BB9715DC1725DB81009D5CE7 /* Missile.h */,
+				BB13BAD41727FB46007078CD /* Missile.cpp */,
 				BB9715DD1725DBC3009D5CE7 /* Constants.h */,
+				BB13BAD21727D5A4007078CD /* City.h */,
+				BB13BAD31727DE7D007078CD /* Silo.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -1100,9 +1197,12 @@
 				BB9717241726012F009D5CE7 /* ofxSimpleGuiPage.cpp in Sources */,
 				BB9717251726012F009D5CE7 /* ofxSimpleGuiToo.cpp in Sources */,
 				BB9717261726012F009D5CE7 /* ofxSimpleGuiValueControl.cpp in Sources */,
-				BB97172917260148009D5CE7 /* LaserPointer.cpp in Sources */,
 				BB971754172601A4009D5CE7 /* ofxRemoteCameraClient.cpp in Sources */,
 				BB971755172601A4009D5CE7 /* ofxRemoteCameraServer.cpp in Sources */,
+				BB80BD471726748500181178 /* LaserPointer.cpp in Sources */,
+				BB13BAD51727FB46007078CD /* Missile.cpp in Sources */,
+				BB13BAF8172802BF007078CD /* ofxMediaDB.cpp in Sources */,
+				BB13BB0617280371007078CD /* ofxColorGradient.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1321,6 +1421,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../../_Addons/ofxRemoteCamera/libs/turbo-jpeg/lib/vs2010\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1411,6 +1512,7 @@
 				LIBRARY_SEARCH_PATHS_QUOTED_FOR_TARGET_2 = "\"$(SRCROOT)/../../../../_Addons/ofxRemoteCamera/libs/turbo-jpeg/lib/vs2010\"";
 				PREBINDING = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx10.7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

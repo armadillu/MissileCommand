@@ -3,9 +3,14 @@
 #include "ofMain.h"
 #include "Obj2D.h"
 #include "Missile.h"
+#include "City.h"
+#include "Silo.h"
 #include "Constants.h"
 #include "LaserPointer.h"
 #include "ofxRemoteCameraClient.h"
+
+#include "Explosion.h"
+
 
 
 class testApp : public ofBaseApp{
@@ -30,18 +35,38 @@ class testApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 
 		void startLevel();
-		vector<Obj2D> cities;
+		Silo * bestSiloForTarget(ofVec2f target);
+		vector<City> cities;
+		vector<Silo*> silos;
 		vector<Missile*> badMissiles;
 		vector<Missile*> playerMissiles;
 		float levelTime;
+		Explosion e;
 
-	gameState state;
-	ofImage city;
-	ofImage bg;
 
-///////////
-	
-	ofxRemoteCameraClient	remoteCam;
-	LaserPointer			laser;
+
+		gameState state;
+		ofImage city;
+		ofImage silo;
+		ofImage bg;
+		ofSoundPlayer startup, launch, explode;
+
+		///////////
+		
+		ofxRemoteCameraClient	remoteCam;
+		LaserPointer			laser;
+
+	//////////
+
+	//expolosions
+
+	float strength;
+	float numP;
+	float friction;
+	float life;
+	float offset;
+	float spawnOffset;
+	float smokeLife;
+	float gravity;
 
 };

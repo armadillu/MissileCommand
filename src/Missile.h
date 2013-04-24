@@ -11,6 +11,10 @@
 
 #include "Constants.h"
 #include "ofMain.h"
+#include "City.h"
+//#include "Silo.h"
+
+class Silo;
 
 class Missile{
 public:
@@ -20,28 +24,7 @@ public:
 		countDown = ofRandom(LEVEL_TIME * 0.7);
 	}
 
-	ofVec2f bestSiloForShot(ofVec2f target){
-		
-		ofVec2f p1 = SILO_LEFT;
-		ofVec2f p2 = SILO_MID;
-		ofVec2f p3 = SILO_RIGHT;
-		float d1 = p1.distance(target);
-		float d2 = p2.distance(target);
-		float d3 = p3.distance(target);
-		if (d1 > d2){
-			if (d2 > d3){
-				return p3;
-			}else{
-				return p2;
-			}
-		}else{
-			if (d1 > d3){
-				return p3;
-			}else{
-				return p1;
-			}
-		}
-	}
+	void setSilo(Silo* silo_){silo = silo_;}
 
 	void startBad(){
 		color = ofColor(200,0,0);
@@ -49,23 +32,15 @@ public:
 		pos.x = origin.x = ofRandom(0, ofGetWidth());
 		pos.y = origin.y = -2;
 		speed = ofVec2f(ofGetWidth()*0.5, ofGetHeight()) - pos;
-		speed = speed.normalize() * BAD_MISSILE_SPEED;
+		speed = speed.normalized() * BAD_MISSILE_SPEED;
 		speed.rotate( ofRandom(-30, 30));
 		explosionTimeLine = 0;
 	}
 
 
-	void startGood(ofVec2f target_){
-		target = target_;
-		color = ofColor(50,50,200);
-		bad = FALSE;
-		ofVec2f silo = bestSiloForShot(target);
-		pos = origin = silo;
-		speed = target - pos;
-		speed = speed.normalize() * GOOD_MISSILE_SPEED;
-		explosionTimeLine = 0;
-	}
+	void startGood( ofVec2f target_ );
 
+	
 	void update(float dt){
 		if ( countDown < 0 || bad == FALSE){
 			if (!exploded){
@@ -76,8 +51,9 @@ public:
 						exploded = true;
 					}
 				}else{
-					if (pos.distance(target) < 5){
+					if (pos.distance(target) <  0.5 * speed.length() * dt ){
 						exploded = true;
+						pos = target;
 					}
 				}
 			}else{
@@ -87,7 +63,10 @@ public:
 		}else{
 			countDown -= dt;
 		}
-
+	}
+	
+	void explode(){
+		exploded = true;
 	}
 
 	void draw(){
@@ -101,6 +80,11 @@ public:
 				currentExplosionRadius = EXPLOSION_RADIUS * time;
 				if (currentExplosionRadius > 0) ofCircle(pos, currentExplosionRadius);
 				//printf("%f\n", time);
+			}else{
+				int len = 3;
+				glLineWidth(1);
+				ofLine( target.x - len, target.y + len, target.x + len, target.y - len);
+				ofLine( target.x + len, target.y + len, target.x - len, target.y - len);
 			}
 		}
 	}
@@ -108,7 +92,11 @@ public:
 	bool dead(){
 		return exploded && (explosionTimeLine > EXPLOSION_DURATION);
 	}
-	
+
+	float explosionRadius(){
+		return currentExplosionRadius;
+	}
+
 	ofVec2f origin;
 	ofVec2f speed;
 	ofVec2f pos;
@@ -119,6 +107,8 @@ public:
 	float explosionTimeLine; //[0..EXPLOSION_DURATION]
 	bool bad;
 	float currentExplosionRadius;
+
+	Silo* silo;
 };
 
 

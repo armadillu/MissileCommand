@@ -21,8 +21,10 @@ public:
 	void update(float dt);
 	void draw();
 	void setSize();
-	bool hit(ofVec2f);
-	bool hit(ofRectangle);
+	bool hitTest(ofVec2f);
+	bool hitTest(ofRectangle);
+
+	bool hitTestCircle(ofVec2f center, float radius);
 
 	ofColor color;
 	ofVec2f speed;
