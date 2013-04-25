@@ -24,6 +24,7 @@
 #define START_BUTTON_POS		ofGetWidth()/2 - startButton.getWidth()/2, ofGetHeight()/2 + 2 * startButton.getHeight(), startButton.getWidth(), startButton.getHeight()
 
 #define GAME_OVER_TIME			5
+#define LINE_WIDTH				3
 #define USE_REMOTE_CAMERA		
 
 #define BAD_MISSILE_COLOR	ofColor(255,0,0)

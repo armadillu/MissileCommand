@@ -153,13 +153,14 @@ void testApp::update(){
 			e.update(1./60.);
 
 
+			// GAME OVER ///////////
+
 			int citiesLeft = 0;
 			for(int j = 0; j<cities.size(); j++){
 				if (cities[j].isAlive()){
 					citiesLeft ++;
 				}
 			}
-
 			if (citiesLeft == 0 ){
 				gameOverTimer += dt;
 				if (gameOverTimer > GAME_OVER_TIME){
@@ -167,6 +168,11 @@ void testApp::update(){
 				}
 			}else{
 				gameOverTimer = 0.0;
+			}
+
+			// NEXT LEVEL ///////////
+			if (badMissiles.size() == 0){
+				nextLevel();
 			}
 
 			//remove dead missiles
@@ -263,6 +269,8 @@ void testApp::draw(){
 	//ofShowCursor();
 
 
+	ofSetLineWidth(3);
+
 	ofSetColor(255, 128);
 	laser.draw();
 
@@ -299,7 +307,6 @@ void testApp::draw(){
 		ofNoFill();
 		ofSetColor(0,255,0);
 
-		ofSetLineWidth(2);
 		for(int i = 0; i < lines.size(); i++){
 			ofBeginShape();
 			for(int j = 0; j < lines[i].size(); j++){
