@@ -70,12 +70,11 @@ public:
 	}
 
 	void draw(){
-		glLineWidth(2);
 		if(countDown < 0 || bad == FALSE){
 			ofSetColor(color);
 			ofLine(origin, pos);
 			ofSetColor(ofRandom(255), ofRandom(255), ofRandom(255));
-			ofCircle(pos, 1);
+			ofCircle(pos, LINE_WIDTH);
 			if (exploded){
 				float time = 1 - fabs(-1 + 2 * explosionTimeLine / EXPLOSION_DURATION) ; // http://www.wolframalpha.com/input/?i=y+%3D+1+-+abs%28-1+%2B+2x+%29
 				currentExplosionRadius = EXPLOSION_RADIUS * time;
