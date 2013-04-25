@@ -110,13 +110,13 @@ void testApp::setup(){
 
 	laser.setup(ofRectangle(0,0, ofGetWidth(), ofGetHeight()), this, 640, 480, OF_IMAGE_GRAYSCALE);
 
-	state = PLAYING;
+	state = START_SCREEN;
 
 	//graffiti
 	currentLine = -1;
 	
 	ofSetWindowPosition(-800,0);
-	//ofSetFullscreen(true);
+	ofSetFullscreen(true);
 }
 
 
@@ -429,6 +429,7 @@ void testApp::mouseReleased(int x, int y, int button){
 		if( startb.inside(x, y)){
 			currentLevel = 0;
 			nextLevel();
+			return;
 		}else{
 
 			lines[currentLine].push_back( ofVec2f(x ,y ));
