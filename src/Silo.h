@@ -69,17 +69,20 @@ public:
 
 	void draw(ofTrueTypeFont * font){
 
+		int num = 0;
 		if(isAlive()){
 			Obj2D::draw();
 			ofSetColor(255);
+			num = missiles.size();
 		}else{
 			ofSetColor(0,128);
 			tex->draw( x, y, width, height );
 			ofSetColor(0,128);
+			num = 0;
 		}
 		ofSetColor(0);
 
-		font->drawString( ofToString(missiles.size()),  x + ((missiles.size() > 9 ) ? -3 : 5) , y + 46);
+		font->drawString( ofToString(num),  x + ((missiles.size() > 9 ) ? -3 : 5) , y + 46);
 
 	}
 

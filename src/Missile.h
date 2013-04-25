@@ -70,11 +70,12 @@ public:
 	}
 
 	void draw(){
+
 		if(countDown < 0 || bad == FALSE){
 			ofSetColor(color);
 			ofLine(origin, pos);
 			ofSetColor(ofRandom(255), ofRandom(255), ofRandom(255));
-			ofCircle(pos, LINE_WIDTH);
+			ofCircle(pos, LINE_WIDTH / 2);
 			if (exploded){
 				float time = 1 - fabs(-1 + 2 * explosionTimeLine / EXPLOSION_DURATION) ; // http://www.wolframalpha.com/input/?i=y+%3D+1+-+abs%28-1+%2B+2x+%29
 				currentExplosionRadius = EXPLOSION_RADIUS * time;
@@ -83,8 +84,10 @@ public:
 			}else{
 				int len = 6;
 
-				ofLine( target.x - len, target.y + len, target.x + len, target.y - len);
-				ofLine( target.x + len, target.y + len, target.x - len, target.y - len);
+				if(!bad){
+					ofLine( target.x - len, target.y + len, target.x + len, target.y - len);
+					ofLine( target.x + len, target.y + len, target.x - len, target.y - len);
+				}
 			}
 		}
 	}

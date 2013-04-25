@@ -171,7 +171,7 @@ void testApp::update(){
 			}
 
 			// NEXT LEVEL ///////////
-			if (badMissiles.size() == 0){
+			if (badMissiles.size() == 0 && gameOverTimer < 0.1){
 				nextLevel();
 			}
 
@@ -202,8 +202,9 @@ void testApp::update(){
 			}
 
 			for(int j = 0; j < badMissiles.size(); j++){
-				for(int i = j+1; i < badMissiles.size(); i++){
+				for(int i = 0; i < badMissiles.size(); i++){
 					if ( badMissiles[j]->exploded &&
+						j != i &&
 						badMissiles[j]->pos.distance(badMissiles[i]->pos) < badMissiles[j]->currentExplosionRadius){
 						if (!badMissiles[i]->exploded){
 							badMissiles[i]->explode();
@@ -299,7 +300,7 @@ void testApp::draw(){
 		}
 
 		ofSetColor(255,0,0);
-		font.drawString( "LEVEL: " + ofToString(currentLevel+1), 22,40);
+		font.drawString( "LEVEL: " + ofToString(currentLevel), 22,40);
 	}
 
 	if (state == START_SCREEN){
@@ -337,6 +338,7 @@ void testApp::gameOver(){
 
 void testApp::nextLevel(){
 
+	currentLevel++;
 	startup.play();
 	e.stopPostExplosionSmoke();
 	state = PLAYING;
@@ -344,7 +346,7 @@ void testApp::nextLevel(){
 	playerMissiles.clear();
 	badMissiles.clear();
 	
-	for(int i = 0; i <NUM_BAD_MISSILES + 3 * currentLevel; i++){
+	for(int i = 0; i < NUM_BAD_MISSILES + 4 * currentLevel; i++){
 		Missile *m = new Missile();
 		m->startBad();
 		badMissiles.push_back(m);
@@ -423,7 +425,6 @@ void testApp::mouseDragged(int x, int y, int button){
 		lines[currentLine].push_back( ofVec2f(x ,y ));
 	}
 }
-
 
 
 void testApp::mouseReleased(int x, int y, int button){
