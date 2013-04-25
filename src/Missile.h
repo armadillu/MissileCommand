@@ -27,7 +27,7 @@ public:
 	void setSilo(Silo* silo_){silo = silo_;}
 
 	void startBad(){
-		color = ofColor(200,0,0);
+		color = BAD_MISSILE_COLOR;
 		bad = TRUE;
 		pos.x = origin.x = ofRandom(0, ofGetWidth());
 		pos.y = origin.y = -2;
@@ -70,6 +70,7 @@ public:
 	}
 
 	void draw(){
+		glLineWidth(2);
 		if(countDown < 0 || bad == FALSE){
 			ofSetColor(color);
 			ofLine(origin, pos);
@@ -81,8 +82,8 @@ public:
 				if (currentExplosionRadius > 0) ofCircle(pos, currentExplosionRadius);
 				//printf("%f\n", time);
 			}else{
-				int len = 3;
-				glLineWidth(1);
+				int len = 6;
+
 				ofLine( target.x - len, target.y + len, target.x + len, target.y - len);
 				ofLine( target.x + len, target.y + len, target.x - len, target.y - len);
 			}

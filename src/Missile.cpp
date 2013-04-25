@@ -12,7 +12,7 @@
 void Missile::startGood( ofVec2f target_ ){
 	origin = pos = silo->getCenter();
 	target = target_;
-	color = ofColor(50,50,200);
+	color = GOOD_MISSILE_COLOR;
 	bad = FALSE;
 	pos = origin;
 	speed = target - pos;

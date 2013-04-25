@@ -21,7 +21,7 @@ void testApp::setup(){
 	for(int i = 0; i < numCities; i++){
 		City o;
 		o.setup(&city);
-		o.color = ofColor(30,30,100);
+		o.color = CITY_COLOR;
 		o.position.y = ofGetHeight() - city.height * 1.5;
 		o.position.x = ofGetWidth() * 0.15 + ofGetWidth() * 0.7 * i / (numCities - 1) - city.width * 0.5;
 		cities.push_back(o);
@@ -29,14 +29,14 @@ void testApp::setup(){
 
 	Silo *s = new Silo();
 	s->setup(&silo);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->position = SILO_LEFT - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	s->setMissileSpeed(GOOD_MISSILE_SPEED);
 	silos.push_back(s);
 
 	s = new Silo();
 	s->setup(&silo);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->setMissileSpeed(GOOD_MISSILE_SPEED * 2);
 	s->position = SILO_MID - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	silos.push_back(s);
@@ -44,7 +44,7 @@ void testApp::setup(){
 	s = new Silo();
 	s->setup(&silo);
 	s->setMissileSpeed(GOOD_MISSILE_SPEED);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->position = SILO_RIGHT - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	silos.push_back(s);
 
@@ -88,6 +88,8 @@ void testApp::setup(){
 
 	laser.setup(ofRectangle(0,0, ofGetWidth(), ofGetHeight()), this, 640, 480, OF_IMAGE_GRAYSCALE);
 
+	ofSetWindowPosition(-800,0);
+	ofSetFullscreen(true);
 }
 
 
