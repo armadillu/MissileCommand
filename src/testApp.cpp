@@ -79,11 +79,13 @@ void testApp::setup(){
 
 
 	///////////
+#ifdef USE_REMOTE_CAMERA
+	remoteCam.initGrabber(640,480);
+	remoteCam.start();
+	remoteCam.setRequestedImageType(OF_IMAGE_GRAYSCALE);
+	remoteCam.setRequestedCompressionQuality( 90 );//jpeg, [0..100]
+#endif
 
-//	remoteCam.initGrabber(640,480);
-//	remoteCam.start();
-//	remoteCam.setRequestedImageType(OF_IMAGE_GRAYSCALE);
-//	remoteCam.setRequestedCompressionQuality( 90 );//jpeg, [0..100]
 	laser.setup(ofRectangle(0,0, ofGetWidth(), ofGetHeight()), this, 640, 480, OF_IMAGE_GRAYSCALE);
 
 }
@@ -105,11 +107,13 @@ void testApp::update(){
 
 	///////////////
 
-//	remoteCam.update();
-//
-//	if(remoteCam.isFrameNew()){
-//		laser.update( remoteCam.getPixels() );
-//	}
+#ifdef USE_REMOTE_CAMERA
+	remoteCam.update();
+
+	if(remoteCam.isFrameNew()){
+		laser.update( remoteCam.getPixels() );
+	}
+#endif
 
 	/////////////////
 
@@ -219,7 +223,7 @@ void testApp::update(){
 
 void testApp::draw(){
 
-	ofShowCursor();
+	//ofShowCursor();
 
 	ofSetColor(255);
 	bg.draw(0, 0, ofGetWidth(), ofGetHeight());
@@ -307,6 +311,7 @@ void testApp::exit(){
 
 void testApp::keyPressed(int key){
 
+	if(key==' ')ofToggleFullscreen();
 		
 	startLevel();
 }
@@ -351,6 +356,8 @@ void testApp::mouseReleased(int x, int y, int button){
 			m->startGood( target );
 			playerMissiles.push_back(m);
 		}
+	}else{
+		startLevel();
 	}
 }
 

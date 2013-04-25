@@ -22,6 +22,8 @@
 #define SILO_MID				ofVec2f( ofGetWidth() * 0.5, ofGetHeight() * 0.9 )
 #define SILO_RIGHT				ofVec2f( ofGetWidth() * 0.98, ofGetHeight() * 0.9 )
 
+#define USE_REMOTE_CAMERA		
+
 enum TextureID{
 	TEX_SMOKE, TEX_EXPLOSION, TEX_FIRE
 };

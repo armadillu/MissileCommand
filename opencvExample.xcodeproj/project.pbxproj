@@ -169,6 +169,10 @@
 		BB26D3EE172832D300EF5EFD /* ofxMediaDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMediaDB.h; sourceTree = "<group>"; };
 		BB26D3F2172832F100EF5EFD /* Missile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Missile.cpp; sourceTree = "<group>"; };
 		BB26D3F4172832F600EF5EFD /* Silo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Silo.h; sourceTree = "<group>"; };
+		BB26D4001728855500EF5EFD /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
+		BB26D4021728855500EF5EFD /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
+		BB26D4031728855500EF5EFD /* ExplosionParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionParticles.h; sourceTree = "<group>"; };
+		BB26D4041728855500EF5EFD /* ExplosionSmoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionSmoke.h; sourceTree = "<group>"; };
 		BB80BD451726748500181178 /* LaserPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LaserPointer.cpp; sourceTree = "<group>"; };
 		BB80BD461726748500181178 /* LaserPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserPointer.h; sourceTree = "<group>"; };
 		BB9715C41725C6B4009D5CE7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -567,9 +571,30 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		BB26D3F51728855500EF5EFD /* ofxExplosion */ = {
+			isa = PBXGroup;
+			children = (
+				BB26D4001728855500EF5EFD /* readme.md */,
+				BB26D4011728855500EF5EFD /* src */,
+			);
+			name = ofxExplosion;
+			path = ../../../../_Addons/ofxExplosion;
+			sourceTree = "<group>";
+		};
+		BB26D4011728855500EF5EFD /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB26D4021728855500EF5EFD /* Explosion.h */,
+				BB26D4031728855500EF5EFD /* ExplosionParticles.h */,
+				BB26D4041728855500EF5EFD /* ExplosionSmoke.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				BB26D3F51728855500EF5EFD /* ofxExplosion */,
 				BB26D3E1172832D300EF5EFD /* ofxMediaDB */,
 				BB26D3D3172832B700EF5EFD /* ofxColorGradient */,
 				BB80BD431726748500181178 /* ofxLaserPointer */,
