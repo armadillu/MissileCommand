@@ -67,18 +67,20 @@ public:
 	}
 
 
-	void draw(){
+	void draw(ofTrueTypeFont * font){
 
 		if(isAlive()){
 			Obj2D::draw();
 			ofSetColor(255);
-			ofDrawBitmapString( ofToString(missiles.size()),  x, y + 26);
 		}else{
 			ofSetColor(0,128);
 			tex->draw( x, y, width, height );
 			ofSetColor(0,128);
-			ofDrawBitmapString( "X",  x, y + 26);
 		}
+		ofSetColor(0);
+
+		font->drawString( ofToString(missiles.size()),  x + ((missiles.size() > 9 ) ? -3 : 5) , y + 46);
+
 	}
 
 	

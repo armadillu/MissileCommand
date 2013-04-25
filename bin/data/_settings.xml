@@ -7,13 +7,17 @@
         <name>showCamImage</name>
         <value>0</value>
     </Toggle_showCamImage>
+    <Toggle_drawDebug>
+        <name>drawDebug</name>
+        <value>0</value>
+    </Toggle_drawDebug>
     <SliderInt_imgThreshold>
         <name>imgThreshold</name>
-        <value>239</value>
+        <value>92</value>
     </SliderInt_imgThreshold>
     <SliderInt_numErode>
         <name>numErode</name>
-        <value>2</value>
+        <value>0</value>
     </SliderInt_numErode>
     <SliderInt_numDilate>
         <name>numDilate</name>
@@ -21,13 +25,13 @@
     </SliderInt_numDilate>
     <QuadWarp_cameraCrop>
         <name>cameraCrop</name>
-        <values_0_x>95.000000000</values_0_x>
-        <values_0_y>43.000000000</values_0_y>
-        <values_1_x>598.000000000</values_1_x>
+        <values_0_x>43.000000000</values_0_x>
+        <values_0_y>66.000000000</values_0_y>
+        <values_1_x>553.000000000</values_1_x>
         <values_1_y>27.000000000</values_1_y>
-        <values_2_x>576.000000000</values_2_x>
-        <values_2_y>468.000000000</values_2_y>
-        <values_3_x>59.000000000</values_3_x>
-        <values_3_y>414.000000000</values_3_y>
+        <values_2_x>556.000000000</values_2_x>
+        <values_2_y>461.000000000</values_2_y>
+        <values_3_x>33.000000000</values_3_x>
+        <values_3_y>442.000000000</values_3_y>
     </QuadWarp_cameraCrop>
 </controls>

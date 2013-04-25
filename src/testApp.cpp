@@ -8,6 +8,7 @@ void testApp::setup(){
 	ofBackground(0);
 	ofEnableAlphaBlending();
 
+	ofSetCircleResolution(33);
 	ofDisableArbTex();
 
 	startup.loadSound("start.wav");
@@ -16,34 +17,48 @@ void testApp::setup(){
 	empty.loadSound("empty.wav");
 	
 	city.loadImage("city.png");
+	city.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 	silo.loadImage("silo.png");
+	silo.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 	bg.loadImage("bg.png");
+	bg.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 	logo.loadImage("logo.png");
+	logo.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 	startButton.loadImage("startButton.png");
+	startButton.getTextureReference().setTextureMinMagFilter(GL_NEAREST, GL_NEAREST);
 
 
-	font.loadFont("ARCADE_N.TTF", 18, false, false);
+	font.loadFont("ARCADE_N.TTF", 12, false, false);
 
 	int numCities = NUM_CITIES;
-	for(int i = 0; i < numCities; i++){
+	for(int i = 0; i < NUM_CITIES/2; i++){
 		City o;
 		o.setup(&city);
-		o.color = ofColor(30,30,100);
-		o.position.y = ofGetHeight() - city.height * 1.5;
-		o.position.x = ofGetWidth() * 0.15 + ofGetWidth() * 0.7 * i / (numCities - 1) - city.width * 0.5;
+		o.color = CITY_COLOR;
+		o.position.y = ofGetHeight() - city.height * 2.0 - ofRandom(10);
+		o.position.x = ofGetWidth() * 0.19 + ofGetWidth() * 0.55 * i / (numCities - 1) - city.width * 0.5;
+		cities.push_back(o);
+	}
+
+	for(int i = 0; i < NUM_CITIES/2; i++){
+		City o;
+		o.setup(&city);
+		o.color = CITY_COLOR;
+		o.position.y = ofGetHeight() - city.height * 2.0 - ofRandom(10);
+		o.position.x = ofGetWidth() * (0.5 +  0.19/2) + ofGetWidth() * 0.55 * i / (numCities - 1) - city.width * 0.5;
 		cities.push_back(o);
 	}
 
 	Silo *s = new Silo();
 	s->setup(&silo);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->position = SILO_LEFT - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	s->setMissileSpeed(GOOD_MISSILE_SPEED);
 	silos.push_back(s);
 
 	s = new Silo();
 	s->setup(&silo);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->setMissileSpeed(GOOD_MISSILE_SPEED * 2);
 	s->position = SILO_MID - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	silos.push_back(s);
@@ -51,7 +66,7 @@ void testApp::setup(){
 	s = new Silo();
 	s->setup(&silo);
 	s->setMissileSpeed(GOOD_MISSILE_SPEED);
-	s->color = ofColor(30,30,100);
+	s->color = SILO_COLOR;
 	s->position = SILO_RIGHT - ofVec2f(silo.getWidth() * 0.5, silo.getHeight() * 0.5);
 	silos.push_back(s);
 
@@ -95,11 +110,13 @@ void testApp::setup(){
 
 	laser.setup(ofRectangle(0,0, ofGetWidth(), ofGetHeight()), this, 640, 480, OF_IMAGE_GRAYSCALE);
 
-	state = START_SCREEN;
+	state = PLAYING;
 
 	//graffiti
 	currentLine = -1;
 	
+	ofSetWindowPosition(-800,0);
+	//ofSetFullscreen(true);
 }
 
 
@@ -260,7 +277,7 @@ void testApp::draw(){
 			cities[i].draw();
 		}
 		for(int i = 0; i < silos.size(); i++){
-			silos[i]->draw();
+			silos[i]->draw(&font);
 		}
 
 		for(int i = 0; i < cities.size(); i++){
