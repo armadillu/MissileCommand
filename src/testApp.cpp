@@ -13,9 +13,16 @@ void testApp::setup(){
 	startup.loadSound("start.wav");
 	launch.loadSound("launch.wav");
 	explode.loadSound("explode.wav");
+	empty.loadSound("empty.wav");
+	
 	city.loadImage("city.png");
 	silo.loadImage("silo.png");
 	bg.loadImage("bg.png");
+	logo.loadImage("logo.png");
+	startButton.loadImage("startButton.png");
+
+
+	font.loadFont("ARCADE_N.TTF", 18, false, false);
 
 	int numCities = NUM_CITIES;
 	for(int i = 0; i < numCities; i++){
@@ -88,6 +95,11 @@ void testApp::setup(){
 
 	laser.setup(ofRectangle(0,0, ofGetWidth(), ofGetHeight()), this, 640, 480, OF_IMAGE_GRAYSCALE);
 
+	state = START_SCREEN;
+
+	//graffiti
+	currentLine = -1;
+	
 }
 
 
@@ -95,15 +107,6 @@ void testApp::update(){
 
 	float dt = 1/60.;
 
-
-	e.setSmokeProperties(
-						 spawnOffset,					//random spawn pos offset from debris
-						 ofVec2f(0,-50),	//smoke particles speed in pix / sec
-						 ofVec2f(50,0),	//smoke particles acc in pix / sec
-						 smokeLife					//life in seconds
-						 );
-
-	e.update(1./60.);
 
 	///////////////
 
@@ -123,6 +126,32 @@ void testApp::update(){
 
 		case PLAYING:{
 
+			e.setSmokeProperties(
+								 spawnOffset,					//random spawn pos offset from debris
+								 ofVec2f(0,-50),	//smoke particles speed in pix / sec
+								 ofVec2f(50,0),	//smoke particles acc in pix / sec
+								 smokeLife					//life in seconds
+								 );
+
+			e.update(1./60.);
+
+
+			int citiesLeft = 0;
+			for(int j = 0; j<cities.size(); j++){
+				if (cities[j].isAlive()){
+					citiesLeft ++;
+				}
+			}
+
+			if (citiesLeft == 0 ){
+				gameOverTimer += dt;
+				if (gameOverTimer > GAME_OVER_TIME){
+					gameOver();
+				}
+			}else{
+				gameOverTimer = 0.0;
+			}
+
 			//remove dead missiles
 			for(int i = playerMissiles.size()-1; i >= 0 ; i--){
 				playerMissiles[i]->update(dt);
@@ -138,7 +167,6 @@ void testApp::update(){
 			}
 
 			//collide missiles with missiles
-			//vector<int> badMissilesToDelete;
 			for(int j = 0; j < playerMissiles.size(); j++){
 				for(int i = 0; i < badMissiles.size(); i++){
 					if ( playerMissiles[j]->pos.distance(badMissiles[i]->pos) < playerMissiles[j]->currentExplosionRadius){
@@ -146,9 +174,6 @@ void testApp::update(){
 							badMissiles[i]->explode();
 							explode.play();
 						}
-						//if ( std::find(badMissilesToDelete.begin(), badMissilesToDelete.end(), i) == badMissilesToDelete.end() ){
-							//badMissilesToDelete.push_back(i);
-						//}
 					}
 				}
 			}
@@ -165,16 +190,11 @@ void testApp::update(){
 				}
 			}
 
-			//remove collided missiles
-//			for(int i = 0; i < badMissilesToDelete.size() ; i++){
-//				delete badMissiles[ badMissilesToDelete[i] ];
-//				badMissiles.erase(badMissiles.begin() + badMissilesToDelete[i]);
-//			}
-
 			//collide bad missiles with cities
 			for(int i = badMissiles.size() - 1; i >= 0; i--){
 				if (badMissiles[i]->exploded){
 					for(int j = 0; j<cities.size(); j++){
+						
 						if ( cities[j].hitTestCircle(badMissiles[i]->pos, badMissiles[i]->explosionRadius()) ){
 							if ( cities[j].isAlive() ){
 								
@@ -225,21 +245,24 @@ void testApp::draw(){
 
 	//ofShowCursor();
 
-	ofSetColor(255);
-	bg.draw(0, 0, ofGetWidth(), ofGetHeight());
 
 	ofSetColor(255, 128);
 	laser.draw();
 
-	
-	for(int i = 0; i < cities.size(); i++){
-		cities[i].draw();
-	}
-	for(int i = 0; i < silos.size(); i++){
-		silos[i]->draw();
-	}
-
 	if (state == PLAYING){
+
+		ofSetColor(255);
+		bg.draw(0, 0, ofGetWidth(), ofGetHeight());
+
+		e.drawMesh();
+
+		for(int i = 0; i < cities.size(); i++){
+			cities[i].draw();
+		}
+		for(int i = 0; i < silos.size(); i++){
+			silos[i]->draw();
+		}
+
 		for(int i = 0; i < cities.size(); i++){
 			cities[i].draw();
 		}
@@ -249,14 +272,46 @@ void testApp::draw(){
 		for(int i = 0; i < playerMissiles.size(); i++){
 			playerMissiles[i]->draw();
 		}
+
+		ofSetColor(255,0,0);
+		font.drawString( "LEVEL: " + ofToString(currentLevel+1), 22,40);
 	}
 
-	e.drawMesh();
+	if (state == START_SCREEN){
+
+		ofNoFill();
+		ofSetColor(0,255,0);
+
+		ofSetLineWidth(2);
+		for(int i = 0; i < lines.size(); i++){
+			ofBeginShape();
+			for(int j = 0; j < lines[i].size(); j++){
+				ofVertex(lines[i][j].x, lines[i][j].y);
+			}
+			ofEndShape();
+		}
+
+		ofFill();
+
+		ofSetColor(255);
+		logo.draw(ofGetWidth()/2 - logo.getWidth()/2, ofGetHeight()/2 - logo.getHeight() );
+		startButton.draw(START_BUTTON_POS);
+
+	}
+
+}
+
+void testApp::gameOver(){
+
+	state = START_SCREEN;
+	lines.clear();
+	currentLine = -1;
+	e.stopPostExplosionSmoke();
 
 }
 
 
-void testApp::startLevel(){
+void testApp::nextLevel(){
 
 	startup.play();
 	e.stopPostExplosionSmoke();
@@ -265,7 +320,7 @@ void testApp::startLevel(){
 	playerMissiles.clear();
 	badMissiles.clear();
 	
-	for(int i = 0; i <NUM_BAD_MISSILES; i++){
+	for(int i = 0; i <NUM_BAD_MISSILES + 3 * currentLevel; i++){
 		Missile *m = new Missile();
 		m->startBad();
 		badMissiles.push_back(m);
@@ -313,7 +368,7 @@ void testApp::keyPressed(int key){
 
 	if(key==' ')ofToggleFullscreen();
 		
-	startLevel();
+	nextLevel();
 }
 
 
@@ -325,39 +380,59 @@ void testApp::keyReleased(int key){
 void testApp::mouseMoved(int x, int y){
 
 }
-void testApp::mouseDragged(int x, int y, int button){
-
-}
 
 
 void testApp::mousePressed(int x, int y, int button){
 
-//	e.explode(	ofVec2f(x,y),
-//			  strength,	//explosion strength
-//			  numP,		//num debris particles
-//			  friction,	//air friction
-//			  ofVec2f(0, gravity), // gravity vector
-//			  life,		//particles life duration
-//			  offset		//initial position randomness, should be exploded object radius +-
-//			  );
+	if(state==START_SCREEN){
 
+		currentLine++;
+		vector<ofPoint> v;
+		lines.push_back( v );
+		lines[currentLine].push_back( ofVec2f(x ,y ));
+	}
 }
+
+void testApp::mouseDragged(int x, int y, int button){
+
+	if(state==START_SCREEN){
+		lines[currentLine].push_back( ofVec2f(x ,y ));
+	}
+}
+
 
 
 void testApp::mouseReleased(int x, int y, int button){
 
 	ofVec2f target = ofVec2f(x,y);
-	Silo * silo = bestSiloForTarget( target );
 
-	if (silo != NULL){
-		Missile *m = silo->launchMissile();
-		if(m!=NULL){
-			launch.play();
-			m->startGood( target );
-			playerMissiles.push_back(m);
+	if(state==START_SCREEN){
+
+		ofRectangle startb = ofRectangle(START_BUTTON_POS);
+		if( startb.inside(x, y)){
+			currentLevel = 0;
+			nextLevel();
+		}else{
+
+			lines[currentLine].push_back( ofVec2f(x ,y ));
 		}
-	}else{
-		startLevel();
+	}
+
+	if(state==PLAYING){
+		Silo * silo = bestSiloForTarget( target );
+
+		if (silo != NULL){
+			Missile *m = silo->launchMissile();
+			if(m != NULL){
+				launch.play();
+				m->startGood( target );
+				playerMissiles.push_back(m);
+			}else{
+				empty.play();
+			}
+		}else{
+			empty.play();
+		}
 	}
 }
 

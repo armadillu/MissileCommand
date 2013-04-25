@@ -15,7 +15,7 @@
 
 class testApp : public ofBaseApp{
 
-	enum gameState{PLAYING};
+	enum gameState{PLAYING, START_SCREEN, END_LEVEL};
 
 	public:
 
@@ -34,7 +34,10 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		void startLevel();
+		void nextLevel();
+		void gameOver();
+		float gameOverTimer;
+
 		Silo * bestSiloForTarget(ofVec2f target);
 		vector<City> cities;
 		vector<Silo*> silos;
@@ -44,17 +47,29 @@ class testApp : public ofBaseApp{
 		Explosion e;
 
 
-
 		gameState state;
+		int currentLevel;
+	
 		ofImage city;
 		ofImage silo;
 		ofImage bg;
-		ofSoundPlayer startup, launch, explode;
+		ofImage logo;
+		ofImage startButton;
+
+		ofSoundPlayer startup, launch, explode, empty;
+
+		ofTrueTypeFont font;	
 
 		///////////
 		
 		ofxRemoteCameraClient	remoteCam;
 		LaserPointer			laser;
+
+
+	//GRAFFITI
+
+	int currentLine;
+	vector< vector<ofPoint> > lines;
 
 	//////////
 

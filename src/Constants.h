@@ -21,7 +21,9 @@
 #define SILO_LEFT				ofVec2f( ofGetWidth() * 0.02, ofGetHeight() * 0.9 )
 #define SILO_MID				ofVec2f( ofGetWidth() * 0.5, ofGetHeight() * 0.9 )
 #define SILO_RIGHT				ofVec2f( ofGetWidth() * 0.98, ofGetHeight() * 0.9 )
+#define START_BUTTON_POS		ofGetWidth()/2 - startButton.getWidth()/2, ofGetHeight()/2 + 2 * startButton.getHeight(), startButton.getWidth(), startButton.getHeight()
 
+#define GAME_OVER_TIME			5
 #define USE_REMOTE_CAMERA		
 
 enum TextureID{
