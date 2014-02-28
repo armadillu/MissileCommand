@@ -14,6 +14,7 @@
 		BB26D3E0172832B700EF5EFD /* ofxColorGradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3DC172832B700EF5EFD /* ofxColorGradient.cpp */; };
 		BB26D3F1172832D300EF5EFD /* ofxMediaDB.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3ED172832D300EF5EFD /* ofxMediaDB.cpp */; };
 		BB26D3F3172832F100EF5EFD /* Missile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB26D3F2172832F100EF5EFD /* Missile.cpp */; };
+		BB3FABA018C027D3002E4095 /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB3FAB9C18C027D3002E4095 /* ofxMSAInteractiveObject.cpp */; };
 		BB80BD471726748500181178 /* LaserPointer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB80BD451726748500181178 /* LaserPointer.cpp */; };
 		BB9715C91725C6B4009D5CE7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C41725C6B4009D5CE7 /* main.cpp */; };
 		BB9715CA1725C6B4009D5CE7 /* Obj2D.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9715C51725C6B4009D5CE7 /* Obj2D.cpp */; };
@@ -24,7 +25,6 @@
 		BB9716D21726010D009D5CE7 /* ofxTCPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716CB1726010D009D5CE7 /* ofxTCPManager.cpp */; };
 		BB9716D31726010D009D5CE7 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716CD1726010D009D5CE7 /* ofxTCPServer.cpp */; };
 		BB9716D41726010D009D5CE7 /* ofxUDPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716CF1726010D009D5CE7 /* ofxUDPManager.cpp */; };
-		BB9716E617260128009D5CE7 /* ofxMSAInteractiveObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716E217260128009D5CE7 /* ofxMSAInteractiveObject.cpp */; };
 		BB9717181726012F009D5CE7 /* ofxSimpleGuiButton.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716F41726012F009D5CE7 /* ofxSimpleGuiButton.cpp */; };
 		BB9717191726012F009D5CE7 /* ofxSimpleGuiColorPicker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716F61726012F009D5CE7 /* ofxSimpleGuiColorPicker.cpp */; };
 		BB97171A1726012F009D5CE7 /* ofxSimpleGuiComboBox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB9716F81726012F009D5CE7 /* ofxSimpleGuiComboBox.cpp */; };
@@ -173,6 +173,11 @@
 		BB26D4021728855500EF5EFD /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Explosion.h; sourceTree = "<group>"; };
 		BB26D4031728855500EF5EFD /* ExplosionParticles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionParticles.h; sourceTree = "<group>"; };
 		BB26D4041728855500EF5EFD /* ExplosionSmoke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionSmoke.h; sourceTree = "<group>"; };
+		BB3FAB9018C027D3002E4095 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
+		BB3FAB9918C027D3002E4095 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
+		BB3FAB9A18C027D3002E4095 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		BB3FAB9C18C027D3002E4095 /* ofxMSAInteractiveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMSAInteractiveObject.cpp; sourceTree = "<group>"; };
+		BB3FAB9D18C027D3002E4095 /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMSAInteractiveObject.h; sourceTree = "<group>"; };
 		BB80BD451726748500181178 /* LaserPointer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LaserPointer.cpp; sourceTree = "<group>"; };
 		BB80BD461726748500181178 /* LaserPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaserPointer.h; sourceTree = "<group>"; };
 		BB9715C41725C6B4009D5CE7 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
@@ -200,11 +205,6 @@
 		BB9716CE1726010D009D5CE7 /* ofxTCPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxTCPServer.h; sourceTree = "<group>"; };
 		BB9716CF1726010D009D5CE7 /* ofxUDPManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxUDPManager.cpp; sourceTree = "<group>"; };
 		BB9716D01726010D009D5CE7 /* ofxUDPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxUDPManager.h; sourceTree = "<group>"; };
-		BB9716D617260128009D5CE7 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
-		BB9716DF17260128009D5CE7 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
-		BB9716E017260128009D5CE7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		BB9716E217260128009D5CE7 /* ofxMSAInteractiveObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxMSAInteractiveObject.cpp; sourceTree = "<group>"; };
-		BB9716E317260128009D5CE7 /* ofxMSAInteractiveObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxMSAInteractiveObject.h; sourceTree = "<group>"; };
 		BB9716E81726012F009D5CE7 /* changelog.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = changelog.txt; sourceTree = "<group>"; };
 		BB9716F01726012F009D5CE7 /* install.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = install.xml; sourceTree = "<group>"; };
 		BB9716F11726012F009D5CE7 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
@@ -591,16 +591,37 @@
 			path = src;
 			sourceTree = "<group>";
 		};
+		BB3FAB8F18C027D3002E4095 /* ofxMSAInteractiveObject */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FAB9018C027D3002E4095 /* changelog.txt */,
+				BB3FAB9918C027D3002E4095 /* install.xml */,
+				BB3FAB9A18C027D3002E4095 /* LICENSE.txt */,
+				BB3FAB9B18C027D3002E4095 /* src */,
+			);
+			name = ofxMSAInteractiveObject;
+			path = src/ofxMSAInteractiveObject;
+			sourceTree = "<group>";
+		};
+		BB3FAB9B18C027D3002E4095 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				BB3FAB9C18C027D3002E4095 /* ofxMSAInteractiveObject.cpp */,
+				BB3FAB9D18C027D3002E4095 /* ofxMSAInteractiveObject.h */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				BB3FAB8F18C027D3002E4095 /* ofxMSAInteractiveObject */,
 				BB26D3F51728855500EF5EFD /* ofxExplosion */,
 				BB26D3E1172832D300EF5EFD /* ofxMediaDB */,
 				BB26D3D3172832B700EF5EFD /* ofxColorGradient */,
 				BB80BD431726748500181178 /* ofxLaserPointer */,
 				BB97172A172601A4009D5CE7 /* ofxRemoteCamera */,
 				BB9716E71726012F009D5CE7 /* ofxSimpleGuiTooBeta */,
-				BB9716D517260128009D5CE7 /* ofxMSAInteractiveObject */,
 				BB9716C21726010D009D5CE7 /* ofxNetwork */,
 				BB9716AC172600FC009D5CE7 /* ofxBlobTracker */,
 				BBE0D0D1172577CE003C5021 /* ofxTimeMeasurements */,
@@ -682,27 +703,6 @@
 				BB9716CE1726010D009D5CE7 /* ofxTCPServer.h */,
 				BB9716CF1726010D009D5CE7 /* ofxUDPManager.cpp */,
 				BB9716D01726010D009D5CE7 /* ofxUDPManager.h */,
-			);
-			path = src;
-			sourceTree = "<group>";
-		};
-		BB9716D517260128009D5CE7 /* ofxMSAInteractiveObject */ = {
-			isa = PBXGroup;
-			children = (
-				BB9716D617260128009D5CE7 /* changelog.txt */,
-				BB9716DF17260128009D5CE7 /* install.xml */,
-				BB9716E017260128009D5CE7 /* LICENSE.txt */,
-				BB9716E117260128009D5CE7 /* src */,
-			);
-			name = ofxMSAInteractiveObject;
-			path = ../../../../_AddonsByOthers/MSALibs/ofxMSAInteractiveObject;
-			sourceTree = "<group>";
-		};
-		BB9716E117260128009D5CE7 /* src */ = {
-			isa = PBXGroup;
-			children = (
-				BB9716E217260128009D5CE7 /* ofxMSAInteractiveObject.cpp */,
-				BB9716E317260128009D5CE7 /* ofxMSAInteractiveObject.h */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -1101,6 +1101,8 @@
 /* Begin PBXProject section */
 		E4B69B4C0A3A1720003C02F2 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+			};
 			buildConfigurationList = E4B69B4D0A3A1720003C02F2 /* Build configuration list for PBXProject "opencvExample" */;
 			compatibilityVersion = "Xcode 2.4";
 			developmentRegion = English;
@@ -1169,6 +1171,7 @@
 				BB9F40AC172562BF00969EB7 /* tinyxmlerror.cpp in Sources */,
 				BB9F40AD172562BF00969EB7 /* tinyxmlparser.cpp in Sources */,
 				BB9F40AE172562BF00969EB7 /* ofxXmlSettings.cpp in Sources */,
+				BB3FABA018C027D3002E4095 /* ofxMSAInteractiveObject.cpp in Sources */,
 				BBE0D0DD172577CE003C5021 /* ofxTimeMeasurements.cpp in Sources */,
 				BB9715C91725C6B4009D5CE7 /* main.cpp in Sources */,
 				BB9715CA1725C6B4009D5CE7 /* Obj2D.cpp in Sources */,
@@ -1179,7 +1182,6 @@
 				BB9716D21726010D009D5CE7 /* ofxTCPManager.cpp in Sources */,
 				BB9716D31726010D009D5CE7 /* ofxTCPServer.cpp in Sources */,
 				BB9716D41726010D009D5CE7 /* ofxUDPManager.cpp in Sources */,
-				BB9716E617260128009D5CE7 /* ofxMSAInteractiveObject.cpp in Sources */,
 				BB9717181726012F009D5CE7 /* ofxSimpleGuiButton.cpp in Sources */,
 				BB9717191726012F009D5CE7 /* ofxSimpleGuiColorPicker.cpp in Sources */,
 				BB97171A1726012F009D5CE7 /* ofxSimpleGuiComboBox.cpp in Sources */,
